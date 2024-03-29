@@ -1,11 +1,11 @@
-
 from rxconfig import config
 import reflex as rx
+from AI_Chatapp import style
 
 def qa(question:str, answer:str) -> rx.Component:
     return rx.box(
-        rx.box(question, text_align="centre", font_size="3em"),
-        rx.box(answer, text_align="centre", font_size="3em"),
+        rx.box(question, text_align="centre", style=style.question_style),
+        rx.box(answer, text_align="centre", style=style.answer_style),
         margin_y="1em",
     )
 
@@ -27,9 +27,18 @@ def chat() -> rx.Component:
         ]
     )
 
+def question_bar() -> rx.Component:
+    return rx.hstack(
+        rx.input(placeholder="Ask me a question : "),
+        rx.button("ASK"),
+    )
+
 
 def index() -> rx.Component:
-    return rx.container(chat())
+    return rx.container(
+        chat(),
+        question_bar(),
+        )
 
 
 
