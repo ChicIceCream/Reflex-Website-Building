@@ -36,7 +36,7 @@ def index() -> rx.Component:
 # def index() -> rx.Component:
 #     return rx.container(
 #         rx.box(
-#             "What is Randi?",
+#             "Who is my friend?",
 #             # put it on the right.
 #             text_align="right",
 #             font_size="5em"
