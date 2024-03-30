@@ -14,7 +14,7 @@ class TutorialState(rx.State):
     chat_history: list[tuple[str, str]]
 
     async def answer(self):
-        api_key = "*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*"
+        api_key = "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"
         client = AsyncOpenAI(api_key=api_key)
         session = await client.chat.completions.create(
             model="gpt-3.5-turbo",
