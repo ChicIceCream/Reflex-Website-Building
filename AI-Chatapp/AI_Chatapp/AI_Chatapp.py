@@ -1,7 +1,7 @@
 from rxconfig import config
 import reflex as rx
 from AI_Chatapp import style
-from AI_Chatapp.state import State
+from AI_Chatapp.state import TutorialState
 
 def qa(question: str, answer: str) -> rx.Component:
     return rx.box(
@@ -20,7 +20,7 @@ def qa(question: str, answer: str) -> rx.Component:
 def chat() -> rx.Component:
     return rx.box(
         rx.foreach(
-            State.chat_history,
+            TutorialState.chat_history,
             lambda messages: qa(messages[0], messages[1])
         )
     )
@@ -29,21 +29,21 @@ def chat() -> rx.Component:
 def action_bar() -> rx.Component:
     return rx.hstack(
         rx.input(
-            value=State.question,
+            value=TutorialState.question,
             placeholder="Ask a question",
-            on_change=State.set_question,
+            on_change=TutorialState.set_question,
             style=style.input_style,
         ),
         rx.button(
             "Ask", 
-            on_click=State.answer,
+            on_click=TutorialState.answer,
             style=style.button_style,
         ),
-        rx.button(
-            "Clear Chat",
-            on_click=State.clear_chat,
-            style=style.button_style,
-        )
+        # rx.button(
+        #     "Clear Chat",
+        #     on_click=TutorialState.clear_chat,
+        #     style=style.button_style,
+        # )
     )
 
 
