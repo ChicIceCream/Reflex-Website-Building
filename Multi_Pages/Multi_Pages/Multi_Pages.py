@@ -4,7 +4,6 @@ from rxconfig import config
 
 import reflex as rx
 
-docs_url = "https://reflex.dev/docs/getting-started/introduction/"
 filename = f"{config.app_name}/{config.app_name}.py"
 
 
@@ -12,21 +11,21 @@ def index() -> rx.Component:
     return rx.center(
         rx.vstack(  
             rx.heading("Welcome to Task Master!", size="9"),
-            rx.text("This is a simple form"),
+            rx.text("This is a simple task master"),
             rx.hstack(
                 rx.form.root(
                     rx.form.field(
                         rx.form.label("Task"),
                         rx.form.control(
                             rx.input.input(
-                                placeholder="Enter your task!",
+                                placeholder="Enter your task",
                                 type="email",
                             ),
                             as_child=True,
                         ),
                         rx.form.submit(
                             rx.button(
-                                "Add task!",
+                                "Add task",
                                 rx.icon(tag="plus"),
                                 radius="full",
                                 size="2",
@@ -35,7 +34,7 @@ def index() -> rx.Component:
                             as_child=True,
                     ),
                 ),
-                    reset_on_submit=True,
+                reset_on_submit=True,
             ),
             ),
             rx.checkbox(
@@ -54,6 +53,31 @@ def index() -> rx.Component:
         height="100vh",
     )
 
+def about():
+    return rx.text("About Page")
+
+def todo():
+    return rx.center(
+        rx.vstack(
+            rx.heading(
+                "TODO APP",
+                size="9"
+            ),
+        rx.hstack(
+            rx.heading(
+                "Task",
+                size="4",
+            ),
+            rx.heading(
+                "Checked",
+                size="4"
+            ),
+        spacing="9",
+        ),
+        ),
+    )
 
 app = rx.App()
 app.add_page(index)
+app.add_page(todo)
+app.add_page(about)
