@@ -19,7 +19,6 @@ def index() -> rx.Component:
                         rx.form.control(
                             rx.input.input(
                                 placeholder="Enter your task",
-                                type="email",
                             ),
                             as_child=True,
                         ),
@@ -34,7 +33,7 @@ def index() -> rx.Component:
                             as_child=True,
                     ),
                 ),
-                reset_on_submit=True,
+            reset_on_submit=True,
             ),
             ),
             rx.checkbox(
@@ -44,7 +43,6 @@ def index() -> rx.Component:
                 color_scheme="bronze",
                 size="3",
                 variant="soft",
-                # on_change=State.allow
             ),
             align="center",
             spacing="7",
