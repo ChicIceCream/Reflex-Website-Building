@@ -58,7 +58,7 @@ def new_item() -> rx.Component:
         rx.hstack(
             rx.input.root(
                 rx.input(
-                    name="newx_item",
+                    name="new_item",
                     placeholder="Add an item to the list",
                     bg="white",
                 ),
@@ -77,8 +77,10 @@ def index() -> rx.Component:
     Returns:
         Index of the todo app
     """
+    
     return rx.container(
         rx.vstack(
+            rx.color_mode.button("Change"),
             rx.heading("Todos"),
             new_item(),
             rx.divider(),
