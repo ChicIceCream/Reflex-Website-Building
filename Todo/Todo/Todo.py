@@ -4,15 +4,15 @@ class State(rx.State):
     """The app state."""
     
     # The current items that are in the list
-    items = ["Writes code", "Sleep", "Go out", "Shopping"]
+    items = ["Writes code", "Sleep", "Go out"]
     
     def add_item(self, form_data: dict[str, str]):
-        """This will add the data into the list"""
+        """Add a new item to the todo list."""
         
-        new_item = form_data.get("new item")
-        
+        new_item = form_data.get("new_item")
         if new_item:
             self.items.append(new_item)
+
     
     def clear_item(self, item: str):
         """Clears an item from the list
