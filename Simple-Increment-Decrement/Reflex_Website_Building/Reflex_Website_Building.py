@@ -11,22 +11,24 @@ class State(rx.State):
         self.count -= 1
 
 
-def index():
-    return rx.hstack(
-        rx.button(
-            "Decrement",
-            color_scheme="ruby",
-            on_click=State.decrement,
+def index() -> rx.Component:
+        return rx.container(
+            rx.color_mode.button("Change"),
+            rx.hstack(
+                rx.button(
+                    "Decrement",
+                    color_scheme="ruby",
+                    on_click=State.decrement,
+                ),
+                rx.heading(State.count, font_size="2em"),
+                rx.button(
+                    "Increment",
+                    color_scheme="grass",
+                    on_click=State.increment,
+                ),
+            spacing="4",
         ),
-        rx.heading(State.count, font_size="2em"),
-        rx.button(
-            "Increment",
-            color_scheme="grass",
-            on_click=State.increment,
-        ),
-        spacing="4",
     )
-
 
 app = rx.App()
 app.add_page(index)
