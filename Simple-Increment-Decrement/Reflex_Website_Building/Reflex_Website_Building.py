@@ -26,7 +26,7 @@ def index() -> rx.Component:
                     color_scheme="grass",
                     on_click=State.increment,
                 ),
-            spacing="4",
+            spacing="3",
         ),
     )
 
