@@ -14,7 +14,7 @@ from IPython.display import display
 from IPython.display import Markdown
 # from google.colab import userdata
 
-genai.configure(api_key='AIzaSyCCj_8HHeEXic4AgTCRMm4ELNIndN6MlK8')
+genai.configure(api_key='HUSH!')
 
 model = genai.GenerativeModel('gemini-pro')
 
