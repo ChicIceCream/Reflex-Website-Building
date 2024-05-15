@@ -4,6 +4,20 @@ import os
 from openai import AsyncOpenAI
 
 import reflex as rx
+# from reflex.gemini import GeminiClient
+import pathlib
+import textwrap
+
+import google.generativeai as genai
+
+from IPython.display import display
+from IPython.display import Markdown
+# from google.colab import userdata
+
+genai.configure(api_key='AIzaSyCCj_8HHeEXic4AgTCRMm4ELNIndN6MlK8')
+
+model = genai.GenerativeModel('gemini-pro')
+
 
 class TutorialState(rx.State):
 
@@ -12,34 +26,15 @@ class TutorialState(rx.State):
 
     # Keep track of the chat history as a list of (question, answer) tuples.
     chat_history: list[tuple[str, str]]
-
-    async def answer(self):
-        api_key = "---"
-        client = AsyncOpenAI(api_key=api_key)
-        session = await client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "user", "content": self.question}
-                ],
-            stop=None,
-            temperature=0.7,
-            stream=True,
-        )
+    def answer(self):
+        response = model.generate_content(self.question, stream=True)
 
         # Add to the answer as the chatbot responds.
-        answer = ""
-        self.chat_history.append((self.question, answer))
+        for chunk in response.iter_content(chunk_size=128):
+            answer = chunk.decode("utf-8")
+            self.chat_history.append((self.question, answer))
 
         # Clear the question input.
         self.question = ""
         # Yield here to clear the frontend input before continuing.
         yield
-
-        async for item in session:
-            if hasattr(item.choices[0].delta, "content"):
-                if item.choices[0].delta.content is None:
-                    # presence of 'None' indicates the end of the response
-                    break
-                answer += item.choices[0].delta.content
-                self.chat_history[-1] = (self.chat_history[-1][0], answer)
-                yield
