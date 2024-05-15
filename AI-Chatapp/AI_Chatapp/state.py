@@ -26,13 +26,14 @@ class TutorialState(rx.State):
 
     # Keep track of the chat history as a list of (question, answer) tuples.
     chat_history: list[tuple[str, str]]
+
     def answer(self):
-        response = model.generate_content(self.question, stream=True)
+        response = model.generate_content(self.question)
+
 
         # Add to the answer as the chatbot responds.
-        for chunk in response.iter_content(chunk_size=128):
-            answer = chunk.decode("utf-8")
-            self.chat_history.append((self.question, answer))
+        answer = response.text
+        self.chat_history.append((self.question, answer))
 
         # Clear the question input.
         self.question = ""
