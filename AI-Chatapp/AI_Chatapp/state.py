@@ -1,7 +1,7 @@
 # state.py
 import os
 
-from openai import AsyncOpenAI
+# from openai import AsyncOpenAI
 
 import reflex as rx
 # from reflex.gemini import GeminiClient
@@ -14,10 +14,8 @@ from IPython.display import display
 from IPython.display import Markdown
 # from google.colab import userdata
 
-genai.configure(api_key='HUSH!')
-
 model = genai.GenerativeModel('gemini-pro')
-
+genai.configure(api_key='HUSH!')
 
 class TutorialState(rx.State):
 

@@ -66,7 +66,7 @@ def index() -> rx.Component:
 #             font_size="5em"
 #         ),
 #         rx.box(
-#             "It is Dhananjay Sharma!",
+#             "It is noone!",
 #             # lets put this on the left
 #             text_align="left",
 #             font_size="5em"
