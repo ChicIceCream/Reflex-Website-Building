@@ -92,7 +92,7 @@ def action_bar() -> rx.Component:
                 reset_on_submit=True,
             ),
             rx.text(
-                "ReflexGPT may return factually incorrect or misleading responses. Use discretion.",
+                "Chic's GPT may return factually incorrect or misleading responses. Use discretion.",
                 text_align="center",
                 font_size=".75em",
                 color=rx.color("mauve", 10),
