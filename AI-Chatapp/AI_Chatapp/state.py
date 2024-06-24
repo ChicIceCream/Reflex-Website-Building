@@ -32,6 +32,9 @@ class TutorialState(rx.State):
     # Keep track of the chat history as a list of (question, answer) tuples.
     chat_history: list[tuple[str, str]]
 
+    def clear_chat(chat_history):
+        chat_history = []
+    
     def answer(self):
         response = model.generate_content(self.question)
 

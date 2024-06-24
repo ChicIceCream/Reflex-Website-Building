@@ -28,22 +28,36 @@ def chat() -> rx.Component:
 
 def action_bar() -> rx.Component:
     return rx.hstack(
-        rx.input(
-            value=TutorialState.question,
-            placeholder="Ask a question",
-            on_change=TutorialState.set_question,
-            style=style.input_style,
+        # rx.input(
+        #     value=TutorialState.question,
+        #     placeholder="Ask a question",
+        #     on_change=TutorialState.set_question,
+        #     style=style.input_style,
+        # ),
+        rx.radix.text_field.root(
+            rx.radix.text_field.input(
+                value=TutorialState.question,
+                placeholder="Type something...",
+                on_change=TutorialState.set_question,
+                width=["15em", "20em", "45em", "50em", "50em", "50em"],
+            ),
+            rx.radix.text_field.slot(
+                rx.tooltip(
+                    rx.icon("info", size=18),
+                    content="Enter a question to get a response.",
+                )
+            ),
         ),
         rx.button(
             "Ask", 
             on_click=TutorialState.answer,
             style=style.button_style,
         ),
-        # rx.button(
-        #     "Clear Chat",
-        #     on_click=TutorialState.clear_chat,
-        #     style=style.button_style,
-        # )
+        rx.button(
+            "Clear Chat",
+            on_click=TutorialState.clear_chat,
+            style=style.button_style,
+        )
     )
 
 
