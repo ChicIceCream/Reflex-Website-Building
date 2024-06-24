@@ -1,8 +1,8 @@
 # state.py
 import os
 
-# from openai import AsyncOpenAI
-
+from dotenv import load_dotenv
+load_dotenv()
 import reflex as rx
 # from reflex.gemini import GeminiClient
 import pathlib
@@ -14,8 +14,15 @@ from IPython.display import display
 from IPython.display import Markdown
 # from google.colab import userdata
 
+# Checking if the API key is set properly
+api_key = os.getenv("GOOGLE_API_KEY")
+if not api_key:
+    raise Exception("Please set GOOGLE_API_KEY environment variable.")
+else:
+    print(f"API Key Loaded: {api_key[:5]}...")  # Print the first few characters for verification
+
+genai.configure(api_key=api_key)
 model = genai.GenerativeModel('gemini-pro')
-genai.configure(api_key='HUSH!')
 
 class TutorialState(rx.State):
 

@@ -1,0 +1,5 @@
+reflex>=0.4.7
+openai>=1.14.0
+streamlit
+google-generativeai
+python-dotenv
