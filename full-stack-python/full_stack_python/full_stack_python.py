@@ -19,7 +19,7 @@ def index() -> rx.Component:
     # Welcome Page (Index)
     return base_page(
         rx.vstack(
-            rx.heading(State.label, size="9"),
+            rx.heading("Welcome to Chic's Den", size="9"),
             rx.input(
                 on_change=State.handle_title_inpput_change, 
                 placeholder="Enter a title...",
@@ -34,6 +34,10 @@ def index() -> rx.Component:
                 rx.button("About Us!"),
                 href='/about',
             ),
+            rx.link(
+                rx.button("About Us!"),
+                href=navigation.routes.BLOG1_ROUTE,
+            ),
             spacing="5",
             align="center",
             justify="center",
@@ -44,6 +48,15 @@ def index() -> rx.Component:
 
 app = rx.App()
 app.add_page(index)
-app.add_page(pages.about_us, 
+app.add_page(pages.about_page, 
             route=navigation.routes.ABOUT_US_ROUTE
+            )
+app.add_page(pages.contact_page, 
+            route=navigation.routes.CONTACT_US_ROUTE
+            )
+app.add_page(pages.pricing_page, 
+            route=navigation.routes.PRICING_ROUTE
+            )
+app.add_page(pages.blog1_page,
+            route=navigation.routes.BLOG1_ROUTE
             )

@@ -2,12 +2,12 @@ import reflex as rx
 
 from ..ui.base import base_page
 
-def about_page() -> rx.Component:
+def pricing_page() -> rx.Component:
     return base_page(
         rx.vstack(
-            rx.heading("This page is about us", size="9"),
+            rx.heading("Here is our pricing", size="9"),
             rx.text(
-                "Something about us ",
+                "Click here to know our pricing",
             ),
             spacing="5",
             align="center",
