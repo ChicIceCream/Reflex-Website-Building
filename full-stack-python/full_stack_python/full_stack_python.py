@@ -35,7 +35,7 @@ def index() -> rx.Component:
                 href='https://avuy0vjlte4.typeform.com/to/eJ27V0qL',
             ),
             rx.link(
-                rx.button("About Us!"),
+                rx.button("Link to my first blog when I make it!!"),
                 href=navigation.routes.BLOG1_ROUTE,
             ), 
             spacing="5",
