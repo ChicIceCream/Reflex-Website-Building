@@ -11,7 +11,7 @@ class State(rx.State):
     """The app state."""
     label = "Welcome to Chic's Den!"
     
-    def handle_title_inpput_change(self, value: str):
+    def handle_title_input_change(self, value: str):
         """Handle title input change."""
         self.label = value
 
@@ -19,9 +19,9 @@ def index() -> rx.Component:
     # Welcome Page (Index)
     return base_page(
         rx.vstack(
-            rx.heading("Welcome to Chic's Den", size="9"),
+            rx.heading(State.label, size="9"),
             rx.input(
-                on_change=State.handle_title_inpput_change, 
+                on_change=State.handle_title_input_change, 
                 placeholder="Enter a title...",
                 size="3",
                 ),
