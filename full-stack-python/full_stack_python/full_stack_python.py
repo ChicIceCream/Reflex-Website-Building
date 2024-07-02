@@ -31,13 +31,13 @@ def index() -> rx.Component:
                 size="3",
             ),
             rx.link(
-                rx.button("About Us!"),
-                href='/about',
+                rx.button("Click here to Sign Up!!"),
+                href='https://avuy0vjlte4.typeform.com/to/eJ27V0qL',
             ),
             rx.link(
                 rx.button("About Us!"),
                 href=navigation.routes.BLOG1_ROUTE,
-            ),
+            ), 
             spacing="5",
             align="center",
             justify="center",
