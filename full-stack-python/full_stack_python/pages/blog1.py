@@ -5,9 +5,13 @@ from ..ui.base import base_page
 def blog1_page() -> rx.Component:
     return base_page(
         rx.vstack(
-            rx.heading("This is going to be my first blog!!!!!", size="9"),
+            rx.heading("What is Supervised Learning?", size="9"),
             rx.text(
-                "Gonna be epicc!!!",
+                "Supervised learning is a type of machine learning where the model is trained on a labeled dataset. ",
+            ),
+            rx.code(
+                "import sklearn as sk\n",
+                lang="python",
             ),
             spacing="5",
             align="center",
