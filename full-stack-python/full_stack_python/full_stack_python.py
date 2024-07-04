@@ -22,14 +22,9 @@ def index() -> rx.Component:
             rx.heading(State.label, size="9"),
             rx.input(
                 on_change=State.handle_title_input_change, 
-                placeholder="Enter a title...",
+                placeholder="Try typing!",
                 size="3",
                 ),
-            rx.text(
-                "Get started by editing ",
-                rx.code(f"{config.app_name}/{config.app_name}.py"),
-                size="3",
-            ),
             rx.link(
                 rx.button("Click here to Sign Up!!"),
                 href='https://avuy0vjlte4.typeform.com/to/eJ27V0qL',
