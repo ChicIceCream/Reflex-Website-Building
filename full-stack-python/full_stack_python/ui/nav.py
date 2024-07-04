@@ -14,7 +14,7 @@ def navbar() -> rx.Component:
             rx.hstack(
                 rx.hstack(
                     rx.image(
-                        src="/logo.jpg",
+                        # src="full-stack-python/assets/favicon.ico",
                         width="2.25em",
                         height="auto",
                         border_radius="25%",
@@ -25,10 +25,11 @@ def navbar() -> rx.Component:
                     align_items="center",
                 ),
                 rx.hstack(
-                    navbar_link("Home", navigation.routes.HOME_ROUTE),
-                    navbar_link("About", navigation.routes.ABOUT_US_ROUTE),
-                    navbar_link("Pricing", navigation.routes.PRICING_ROUTE),
-                    navbar_link("Contact", navigation.routes.CONTACT_US_ROUTE),
+                    # navbar_link("Home", navigation.routes.HOME_ROUTE),
+                    # navbar_link("About", navigation.routes.ABOUT_US_ROUTE),
+                    # navbar_link("Pricing", navigation.routes.PRICING_ROUTE),
+                    # navbar_link("Contact", navigation.routes.CONTACT_US_ROUTE),
+                    navbar_link("1st Blog!", navigation.routes.BLOG1_ROUTE),
                     spacing="5",
                 ),
                 rx.hstack(
@@ -49,7 +50,7 @@ def navbar() -> rx.Component:
             rx.hstack(
                 rx.hstack(
                     rx.image(
-                        src="/logo.jpg",
+                        # src="/full-stack-python/assets/favicon.ico",
                         width="2em",
                         height="auto",
                         border_radius="25%",
@@ -63,19 +64,19 @@ def navbar() -> rx.Component:
                     rx.menu.trigger(
                         rx.icon("menu", size=30)
                     ),
-                    rx.menu.content(
-                        rx.menu.item("Home", 
-                                    on_click=navigation.NavState.to_home),
-                        rx.menu.item("About", 
-                                    on_click=navigation.NavState.to_about_us),
-                        rx.menu.item("Pricing", 
-                                    on_click=navigation.NavState.to_pricing),
-                        rx.menu.item("Contact", 
-                                    on_click=navigation.NavState.to_contact_us),
-                        rx.menu.separator(),
-                        rx.menu.item("Log in"),
-                        rx.menu.item("Sign up"),
-                    ),
+                    # rx.menu.content(
+                    #     rx.menu.item("Home", 
+                    #                 on_click=navigation.NavState.to_home),
+                    #     rx.menu.item("About", 
+                    #                 on_click=navigation.NavState.to_about_us),
+                    #     rx.menu.item("Pricing", 
+                    #                 on_click=navigation.NavState.to_pricing),
+                    #     rx.menu.item("Contact", 
+                    #                 on_click=navigation.NavState.to_contact_us),
+                    #     rx.menu.separator(),
+                    #     rx.menu.item("Log in"),
+                    #     rx.menu.item("Sign up"),
+                    # ),
                     justify="end",
                 ),
                 justify="between",
