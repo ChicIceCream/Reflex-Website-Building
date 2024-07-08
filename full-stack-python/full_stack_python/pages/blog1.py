@@ -15,9 +15,14 @@ def blog1_page() -> rx.Component:
             rx.code(
                 """
                 import sklearn as sk\n 
-                import the world!\n
                 """,
                 lang="python",
+            ),
+            rx.text(
+                """
+                This is one of the most important line of code in machine learning!
+                
+                """,
             ),
             spacing="5",
             align="center",
