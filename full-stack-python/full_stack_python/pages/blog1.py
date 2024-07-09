@@ -71,13 +71,24 @@ def blog1_page() -> rx.Component:
                 rx.text(
                     '''
                     Machine learning isn't a one-size-fits-all deal. There are three main types:
-
-                    Supervised Learning: Learning from labeled data.
-                    Unsupervised Learning: Finding patterns in unlabeled data.
-                    Reinforcement Learning: Learning by trial and error.
-
                     ''',
                     align="left",
+                ),
+                rx.list.ordered(
+                    rx.list.item(
+                        rx.text("Supervised Learning: ", as_="b"),
+                        "Learning from labeled data."
+                    ),
+                    rx.list.item(
+                        rx.text("Unsupervised Learning: ", as_="b", color="plum",),
+                        "Finding patterns in unlabeled data."
+                    ),
+                    rx.list.item(
+                        rx.text("Reinforcement Learning: ", as_="b"),
+                        "Learning by trial and error."
+                    ),
+                    align="left",
+                    spacing=".25em",
                 ),
                 spacing="5",
                 align="center",
