@@ -6,7 +6,16 @@ def blog1_page() -> rx.Component:
     return base_page(
         rx.box(
             rx.vstack(
-                rx.heading("Introduction to Supervised Learning: A Beginner's Guide", size="8"),
+                rx.heading(
+                    "Introduction to Supervised Learning:",
+                    size="7",
+                    font_family="Cambria",
+                ),
+                rx.heading(
+                    "A Beginner's Guide",
+                    size="7",
+                    font_family="Cambria",
+                ),
                 rx.text(
                     """
                     Hey there, future data science wizards! 🌟 Ever wondered how \n
@@ -16,7 +25,8 @@ def blog1_page() -> rx.Component:
                     fascinating realms: supervised learning. Buckle up, because this\n
                     is going to be fun!
                     """,
-                    align="center",
+                    align="left",
+                    font_family="Cambria",
                 ),
                 rx.code(
                     """
@@ -29,12 +39,14 @@ def blog1_page() -> rx.Component:
                     """
                     This is one of the most important line of code in machine learning!
                     """,
+                    font_family="Cambria",
                 ),
                 rx.text(
                     """
                     We will build a simple classification model using the \n
                     famous Iris dataset later on.
-                    """
+                    """,
+                    font_family="Cambria",
                 ),
                 rx.heading(
                     """
@@ -42,6 +54,7 @@ def blog1_page() -> rx.Component:
                     """,
                     size="5",
                     weight="medium",
+                    font_family="Cambria",
                 ),
                 rx.text(
                     '''
@@ -52,15 +65,19 @@ def blog1_page() -> rx.Component:
                     spotting a fraudulent transaction, machine learning is the secret \n
                     sauce.
                     ''',
-                    align="center",
+                    align="left",
+                    font_family="Cambria",
                 ),
                 spacing="5",
                 align="center",
                 justify="start",
                 min_height="85vh",
             ),
-            overflow="fixed",
-            max_width="100%",
-
+            # overflow="fixed",/
+            # width="80%",
+            # max_width="80%",
+            align="center",
+            margin="0 auto",
+            max_width="550px",
         ),
     )
