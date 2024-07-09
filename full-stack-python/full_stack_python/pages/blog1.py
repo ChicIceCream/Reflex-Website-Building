@@ -9,24 +9,21 @@ def blog1_page() -> rx.Component:
                 rx.heading(
                     "Introduction to Supervised Learning:",
                     size="7",
-                    font_family="Cambria",
+                    # font_family="Cambria",
                 ),
                 rx.heading(
                     "A Beginner's Guide",
                     size="7",
-                    font_family="Cambria",
+                    # font_family="Cambria",
                 ),
                 rx.text(
                     """
-                    Hey there, future data science wizards! 🌟 Ever wondered how \n
-                    Netflix knows what you might want to watch next or how your email\n
-                    filters out spam? The magic behind these and many other tech wonders\n
-                    is machine learning. Today, we're diving into one of its most \n
-                    fascinating realms: supervised learning. Buckle up, because this\n
-                    is going to be fun!
+                    Hey there, future data science wizards! 🌟 Ever wondered how Netflix seems to know \n
+                    exactly what you want to watch next, or how your email filters out spam? The magic behind \n
+                    these tech wonders is machine learning! Today, we're going to dive into one of its \n
+                    coolest aspects: Supervised Learning. Get ready for a fun ride!
                     """,
                     align="left",
-                    font_family="Cambria",
                 ),
                 rx.code(
                     """
@@ -39,34 +36,48 @@ def blog1_page() -> rx.Component:
                     """
                     This is one of the most important line of code in machine learning!
                     """,
-                    font_family="Cambria",
                 ),
                 rx.text(
                     """
                     We will build a simple classification model using the \n
-                    famous Iris dataset later on.
+                    famous Iris dataset later.
                     """,
-                    font_family="Cambria",
                 ),
                 rx.heading(
                     """
-                    What is Machine Learning?
+                    So. What is Machine Learning?
                     """,
                     size="5",
                     weight="medium",
-                    font_family="Cambria",
                 ),
                 rx.text(
                     '''
                     Machine learning is like teaching computers to learn from experience,\n
-                    just like humans do. Instead of programming specific instructions,\n
-                    we feed the machine a ton of data, and it figures out patterns and\n
-                    makes decisions. From recommending your next favorite show to \n
-                    spotting a fraudulent transaction, machine learning is the secret \n
-                    sauce.
+                    just like we humans do! Instead of programming specific instructions like a bunch of \n
+                    if statements, we feed the machine a ton of data, and it figures out patterns and\n
+                    makes decisions itself! In simple terms, machine learning is teaching your computer to \n
+                    make decisions without being explicitly programmed to do so. Now thats how to \n
+                    make your computer smart! 🧠
                     ''',
                     align="left",
-                    font_family="Cambria",
+                ),
+                rx.heading(
+                    """
+                    What are some major types of Machine learning?
+                    """,
+                    size="5",
+                    weight="medium",
+                ),
+                rx.text(
+                    '''
+                    Machine learning isn't a one-size-fits-all deal. There are three main types:
+
+                    Supervised Learning: Learning from labeled data.
+                    Unsupervised Learning: Finding patterns in unlabeled data.
+                    Reinforcement Learning: Learning by trial and error.
+
+                    ''',
+                    align="left",
                 ),
                 spacing="5",
                 align="center",
@@ -78,6 +89,6 @@ def blog1_page() -> rx.Component:
             # max_width="80%",
             align="center",
             margin="0 auto",
-            max_width="550px",
+            max_width="600px",
         ),
     )

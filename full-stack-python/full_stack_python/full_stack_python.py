@@ -40,8 +40,16 @@ def index() -> rx.Component:
         ),
     )
 
+style = {
+    "font_family": "source-serif-pro, Georgia, Cambria, 'Times New Roman', Times, serif",
+}
 
-app = rx.App()
+app = rx.App(
+    style = {
+    "font_family": "source-serif-pro, Georgia, Cambria, 'Times New Roman', Times, serif",
+    }
+)
+
 app.add_page(index)
 
 # app.add_page(pages.about_page, 
