@@ -5,7 +5,7 @@ from ..ui.base import base_page
 def blog1_page() -> rx.Component:
     return base_page(
         rx.vstack(
-            rx.heading("Introduction to Supervised Learning: A Beginner's Guide", size="9"),
+            rx.heading("Introduction to Supervised Learning: A Beginner's Guide", size="8"),
             rx.text(
                 """
                 Hey there, future data science wizards! 🌟 Ever wondered how \n
@@ -15,6 +15,103 @@ def blog1_page() -> rx.Component:
                 fascinating realms: supervised learning. Buckle up, because this\n
                 is going to be fun!
                 """,
+                align="center",
+            ),
+            rx.text(
+                """
+                Hey there, future data science wizards! 🌟 Ever wondered how \n
+                Netflix knows what you might want to watch next or how your email\n
+                filters out spam? The magic behind these and many other tech wonders\n
+                is machine learning. Today, we're diving into one of its most \n
+                fascinating realms: supervised learning. Buckle up, because this\n
+                is going to be fun!Hey there, future data science wizards! 🌟 Ever wondered how \n
+                Netflix knows what you might want to watch next or how your email\n
+                filters out spam? The magic behind these and many other tech wonders\n
+                is machine learning. Today, we're diving into one of its most \n
+                fascinating realms: supervised learning. Buckle up, because this\n
+                is going to be fun!Hey there, future data science wizards! 🌟 Ever wondered how \n
+                Netflix knows what you might want to watch next or how your email\n
+                filters out spam? The magic behind these and many other tech wonders\n
+                is machine learning. Today, we're diving into one of its most \n
+                fascinating realms: supervised learning. Buckle up, because this\n
+                is going to be fun!Hey there, future data science wizards! 🌟 Ever wondered how \n
+                Netflix knows what you might want to watch next or how your email\n
+                filters out spam? The magic behind these and many other tech wonders\n
+                is machine learning. Today, we're diving into one of its most \n
+                fascinating realms: supervised learning. Buckle up, because this\n
+                is going to be fun!Hey there, future data science wizards! 🌟 Ever wondered how \n
+                Netflix knows what you might want to watch next or how your email\n
+                filters out spam? The magic behind these and many other tech wonders\n
+                is machine learning. Today, we're diving into one of its most \n
+                fascinating realms: supervised learning. Buckle up, because this\n
+                is going to be fun!Hey there, future data science wizards! 🌟 Ever wondered how \n
+                Netflix knows what you might want to watch next or how your email\n
+                filters out spam? The magic behind these and many other tech wonders\n
+                is machine learning. Today, we're diving into one of its most \n
+                fascinating realms: supervised learning. Buckle up, because this\n
+                is going to be fun!Hey there, future data science wizards! 🌟 Ever wondered how \n
+                Netflix knows what you might want to watch next or how your email\n
+                filters out spam? The magic behind these and many other tech wonders\n
+                is machine learning. Today, we're diving into one of its most \n
+                fascinating realms: supervised learning. Buckle up, because this\n
+                is going to be fun!Hey there, future data science wizards! 🌟 Ever wondered how \n
+                Netflix knows what you might want to watch next or how your email\n
+                filters out spam? The magic behind these and many other tech wonders\n
+                is machine learning. Today, we're diving into one of its most \n
+                fascinating realms: supervised learning. Buckle up, because this\n
+                is going to be fun!Hey there, future data science wizards! 🌟 Ever wondered how \n
+                Netflix knows what you might want to watch next or how your email\n
+                filters out spam? The magic behind these and many other tech wonders\n
+                is machine learning. Today, we're diving into one of its most \n
+                fascinating realms: supervised learning. Buckle up, because this\n
+                is going to be fun!Hey there, future data science wizards! 🌟 Ever wondered how \n
+                Netflix knows what you might want to watch next or how your email\n
+                filters out spam? The magic behind these and many other tech wonders\n
+                is machine learning. Today, we're diving into one of its most \n
+                fascinating realms: supervised learning. Buckle up, because this\n
+                is going to be fun!Hey there, future data science wizards! 🌟 Ever wondered how \n
+                Netflix knows what you might want to watch next or how your email\n
+                filters out spam? The magic behind these and many other tech wonders\n
+                is machine learning. Today, we're diving into one of its most \n
+                fascinating realms: supervised learning. Buckle up, because this\n
+                is going to be fun!Hey there, future data science wizards! 🌟 Ever wondered how \n
+                Netflix knows what you might want to watch next or how your email\n
+                filters out spam? The magic behind these and many other tech wonders\n
+                is machine learning. Today, we're diving into one of its most \n
+                fascinating realms: supervised learning. Buckle up, because this\n
+                is going to be fun!Hey there, future data science wizards! 🌟 Ever wondered how \n
+                Netflix knows what you might want to watch next or how your email\n
+                filters out spam? The magic behind these and many other tech wonders\n
+                is machine learning. Today, we're diving into one of its most \n
+                fascinating realms: supervised learning. Buckle up, because this\n
+                is going to be fun!Hey there, future data science wizards! 🌟 Ever wondered how \n
+                Netflix knows what you might want to watch next or how your email\n
+                filters out spam? The magic behind these and many other tech wonders\n
+                is machine learning. Today, we're diving into one of its most \n
+                fascinating realms: supervised learning. Buckle up, because this\n
+                is going to be fun!Hey there, future data science wizards! 🌟 Ever wondered how \n
+                Netflix knows what you might want to watch next or how your email\n
+                filters out spam? The magic behind these and many other tech wonders\n
+                is machine learning. Today, we're diving into one of its most \n
+                fascinating realms: supervised learning. Buckle up, because this\n
+                is going to be fun!Hey there, future data science wizards! 🌟 Ever wondered how \n
+                Netflix knows what you might want to watch next or how your email\n
+                filters out spam? The magic behind these and many other tech wonders\n
+                is machine learning. Today, we're diving into one of its most \n
+                fascinating realms: supervised learning. Buckle up, because this\n
+                is going to be fun!Hey there, future data science wizards! 🌟 Ever wondered how \n
+                Netflix knows what you might want to watch next or how your email\n
+                filters out spam? The magic behind these and many other tech wonders\n
+                is machine learning. Today, we're diving into one of its most \n
+                fascinating realms: supervised learning. Buckle up, because this\n
+                is going to be fun!Hey there, future data science wizards! 🌟 Ever wondered how \n
+                Netflix knows what you might want to watch next or how your email\n
+                filters out spam? The magic behind these and many other tech wonders\n
+                is machine learning. Today, we're diving into one of its most \n
+                fascinating realms: supervised learning. Buckle up, because this\n
+                is going to be fun!
+                """,
+                align="center",
             ),
             rx.code(
                 """
