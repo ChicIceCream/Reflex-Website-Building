@@ -160,7 +160,7 @@ def display_search_results(query):
             if os.path.exists(info_path):
                 with open(info_path, 'r') as f:
                     user_info = f.read()
-            st.image(image_path, caption=image_file, use_column_width=True)
+            st.image(image_path, use_column_width=True)
             if user_info:
                 st.write("### Information about the finder:")
                 st.write(user_info)
