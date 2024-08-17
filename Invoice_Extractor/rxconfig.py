@@ -1,5 +1,5 @@
 import reflex as rx
 
 config = rx.Config(
-    app_name="Invoice_Extractor",
+    app_name="invoice_Extractor",
 )
