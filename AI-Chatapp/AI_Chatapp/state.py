@@ -10,10 +10,6 @@ import textwrap
 
 import google.generativeai as genai
 
-from IPython.display import display
-from IPython.display import Markdown
-# from google.colab import userdata
-
 # Checking if the API key is set properly
 api_key = os.getenv("GOOGLE_API_KEY")
 if not api_key:

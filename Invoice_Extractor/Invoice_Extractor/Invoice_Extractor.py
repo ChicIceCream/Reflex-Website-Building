@@ -1,3 +1,4 @@
+import asyncio
 import reflex as rx
 import google.generativeai as genai
 import os
@@ -9,24 +10,20 @@ class UploadExample(rx.State):
     progress: int = 0
     total_bytes: int = 0
     uploaded_files: list[str] = []
-
-    def on_load(self):
-        self.reset()
-        self.uploaded_files = []  # Clear the list of uploaded files
+    file_path: str = ""  # Add this line to store the file path
 
     async def handle_upload(self, files: list[rx.UploadFile]):
         for file in files:
             upload_data = await file.read()
-            # Save the file with the name "invoice_input".
             outfile = rx.get_upload_dir() / "invoice_input.jpeg"
             
-            # Save the file.
             with outfile.open("wb") as file_object:
                 file_object.write(upload_data)
             
-            # Update the uploaded_files var with "invoice_input" instead of the original filename.
             self.uploaded_files.append("invoice_input")
+            self.file_path = str(outfile)  # Store the file path
             self.total_bytes += len(upload_data)
+
 
 
     def handle_upload_progress(self, progress: dict):
@@ -129,8 +126,44 @@ def input_image_details(upload_file):
     else:
         raise FileNotFoundError("No file uploaded")
 
-def launch_gemini():
-    pass
+class AppState(rx.State):
+    response_text: str = ""
+    displayed_text: str = ""
+    chunk_size: int = 14
+
+    async def stream_response(self):
+        words = self.response_text.split()
+        chunks = [" ".join(words[i:i + self.chunk_size]) for i in range(0, len(words), self.chunk_size)]
+
+        text = ""
+        for chunk in chunks:
+            for letter in chunk:
+                text += letter
+                self.displayed_text = text  # Update the displayed text dynamically
+                await asyncio.sleep(0.01)  # Adjust the speed of letter streaming here
+            text += "\n\n"
+            self.displayed_text = text
+            await asyncio.sleep(0.5)  # Adjust the speed of chunk streaming here
+
+def render():
+    return rx.fragment(
+        rx.text(AppState.displayed_text),
+        rx.button("Start Streaming", on_click=AppState.stream_response),
+    )
+
+def launch_gemini(invoice, user_input):
+    input_prompt = """
+        You are an expert in reading invoices. 
+        The user has uploaded an invoice image and is asking for help.
+        If the user asks any questions about the invoice, read from the image and 
+        provide an answer.
+        """
+
+    image_data = input_image_details(invoice)
+    response = get_gemini_response(input_prompt, image_data, user_input)
+    
+    render(response)
+
 
 def index() -> rx.Component:
     return rx.vstack(
@@ -145,6 +178,7 @@ def index() -> rx.Component:
             ),
         ),
         extracted_info(),
+        #launch_gemini(UploadExample.uploaded_files, ExtractedInfoState.user_input),
         align="center"
     )
 
